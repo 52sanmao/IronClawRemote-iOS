@@ -38,7 +38,7 @@ enum SSEEventPayload: Decodable {
         case "error": self = .error(try ErrorEvent(from: decoder))
         case "heartbeat": self = .heartbeat
         default:
-            let raw = try Dictionary(from: decoder)
+            let raw = try Dictionary(from: decoder).value
             self = .unknown(type, raw)
         }
     }
