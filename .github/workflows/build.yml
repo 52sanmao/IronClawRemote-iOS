@@ -12,11 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: List Xcode versions
-        run: ls /Applications | grep Xcode
-
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -27,7 +24,7 @@ jobs:
           xcodebuild clean build \
             -project IronClawRemote.xcodeproj \
             -scheme IronClawRemote \
-            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,arch=x86_64' \
             -derivedDataPath DerivedData \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
