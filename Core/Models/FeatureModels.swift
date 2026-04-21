@@ -687,6 +687,7 @@ struct SettingsImportRequest: Codable {
 }
 
 struct ToolPermissionEntry: Codable, Identifiable, Hashable {
+    var id: String { name }
     let name: String
     let description: String
     let currentState: String
@@ -749,6 +750,7 @@ struct ExtensionListResponse: Codable {
 }
 
 struct RegistryEntryInfo: Codable, Identifiable, Hashable {
+    var id: String { name }
     let name: String
     let displayName: String
     let kind: String
@@ -768,6 +770,7 @@ struct RegistrySearchResponse: Codable {
 }
 
 struct ToolInfo: Codable, Identifiable, Hashable {
+    var id: String { name }
     let name: String
     let description: String
 }
@@ -821,6 +824,7 @@ struct ExtensionSetupRequest: Codable {
 }
 
 struct SkillInfo: Codable, Identifiable, Hashable {
+    var id: String { name }
     let name: String
     let description: String
     let version: String
