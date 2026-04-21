@@ -24,7 +24,7 @@ jobs:
           xcodebuild clean build \
             -project IronClawRemote.xcodeproj \
             -scheme IronClawRemote \
-            -destination "platform=iOS Simulator,name=iPhone 16 Pro" \
+            -sdk iphonesimulator \
             -derivedDataPath DerivedData \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO \
